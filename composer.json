@@ -1,0 +1,28 @@
+{
+    "description": "A Neos CMS package for Cookie Opt-in",
+    "license": "GPL-3.0-or-later",
+    "type": "neos-plugin",
+    "name": "neosrulez/cookieoptin",
+    "authors": [
+        {
+            "name": "Patric Eckhart",
+            "email": "mail@patriceckhart.com",
+            "homepage": "http://www.patriceckhart.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "neos/neos": "*",
+        "neos/nodetypes": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "NeosRulez\\CookieOptIn\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "NeosRulez.CookieOptIn"
+        }
+    }
+}

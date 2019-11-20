@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="NeosRulez.CookieOptIn" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="cookieGroupName" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="cookieGroupDescription" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="noCookieGroups" xml:space="preserve">
+				<source>No Cookie-Groups available</source>
+			</trans-unit>
+			<trans-unit id="newCookieGroup" xml:space="preserve">
+				<source>New Cookie-Group</source>
+			</trans-unit>
+			<trans-unit id="cookieMangerLabel" xml:space="preserve">
+				<source>Cookie Manager</source>
+			</trans-unit>
+			<trans-unit id="cookieMangerDescription" xml:space="preserve">
+				<source>With this module Cookies can be managed</source>
+			</trans-unit>
+			<trans-unit id="cookieManagerGroupLabel" xml:space="preserve">
+				<source>Cookie-Groups</source>
+			</trans-unit>
+			<trans-unit id="cookieManagerGroupDescription" xml:space="preserve">
+				<source>With this module Cookie-Groups can be managed</source>
+			</trans-unit>
+			<trans-unit id="cookieGroupEssential" xml:space="preserve">
+				<source>Essential</source>
+			</trans-unit>
+			<trans-unit id="save" xml:space="preserve">
+				<source>Save</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

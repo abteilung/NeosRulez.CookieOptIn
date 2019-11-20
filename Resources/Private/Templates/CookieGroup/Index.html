@@ -1,0 +1,39 @@
+<f:if condition="{cookieGroups}">
+    <f:then>
+        <table class="neos-table">
+            <thead>
+            <tr>
+                <td>{f:translate(id: 'cookieGroupName', package: 'NeosRulez.CookieOptIn', source: 'Main')}</td>
+                <td>{f:translate(id: 'cookieGroupDescription', package: 'NeosRulez.CookieOptIn', source: 'Main')}</td>
+                <td>&nbsp;</td>
+            </tr>
+            </thead>
+            <tbody>
+            <f:for each="{cookieGroups}" as="cookieGroup">
+                <tr>
+                    <td>{cookieGroup.name}
+                        <f:if condition="{cookieGroup.essential}">
+                            &nbsp;<span class="neos-label">{f:translate(id: 'cookieGroupEssential', package: 'NeosRulez.CookieOptIn', source: 'Main')}</span>
+                        </f:if>
+                    </td>
+                    <td>{cookieGroup.description}</td>
+                    <td class="neos-action">
+                        <div class="neos-pull-right">
+                            <f:form action="delete" arguments="{cookieGroup: cookieGroup}">
+                                <f:link.action class="neos-button neos-button-primary" action="edit" arguments="{cookieGroup: cookieGroup}"><i class="fas fa-pencil-alt icon-white"></i></f:link.action>
+                                <button type="submit" class="neos-button neos-button-danger"><i class="fas fa-trash"></i></button>
+                            </f:form>
+                        </div>
+                    </td>
+                </tr>
+            </f:for>
+            </tbody>
+        </table>
+    </f:then>
+    <f:else>
+        <br />{f:translate(id: 'noCookieGroups', package: 'NeosRulez.CookieOptIn', source: 'Main')}
+    </f:else>
+</f:if>
+<div class="neos-footer">
+    <f:link.action class="neos-button neos-button-primary" action="new">{f:translate(id: 'newCookieGroup', package: 'NeosRulez.CookieOptIn', source: 'Main')}</f:link.action>
+</div>

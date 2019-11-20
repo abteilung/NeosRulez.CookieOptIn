@@ -1,0 +1,8 @@
+<f:form action="create" objectName="newCookieGroup" controller="CookieGroup">
+    <div class="neos-content neos-container-fluid">
+        <f:render partial="CookieGroup/Fields" arguments="{_all}" />
+    </div>
+    <div class="neos-footer">
+        <f:form.submit class="neos-button neos-button-primary" value="{f:translate(id: 'save', package: 'NeosRulez.CookieOptIn', source: 'Main')}" />
+    </div>
+</f:form>

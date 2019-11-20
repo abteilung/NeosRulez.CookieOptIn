@@ -1,0 +1,32 @@
+Neos:
+  Neos:
+    userInterface:
+      translation:
+        autoInclude:
+          NeosRulez.CookieOptIn:
+            - Main
+            - 'NodeTypes/*'
+      defaultLanguage: 'de'
+    fusion:
+      autoInclude:
+        NeosRulez.CookieOptIn: true
+    modules:
+      cookieoptin:
+        label: NeosRulez.CookieOptIn:Main:cookieManagerGroupLabel
+        controller: '\Neos\Neos\Controller\Module\ManagementController'
+        description: NeosRulez.CookieOptIn:Main:cookieMangerDescription
+        icon: 'icon-cookie'
+        resource: 'Neos_Neos_Backend_Module_Management'
+        submodules:
+          cookiegroup:
+            label: NeosRulez.CookieOptIn:Main:cookieManagerGroupLabel
+            controller: '\NeosRulez\CookieOptIn\Controller\CookieGroupController'
+            description: NeosRulez.CookieOptIn:Main:cookieManagerGroupDescription
+            icon: 'icon-cookie'
+            actions:
+              index:
+                label: NeosRulez.CookieOptIn:Main:cookieManagerGroupLabel
+                title: NeosRulez.CookieOptIn:Main:cookieManagerGroupDescription
+NeosRulez:
+  CookieOptIn:
+    test: '1'
