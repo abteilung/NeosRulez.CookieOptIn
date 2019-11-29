@@ -27,6 +27,15 @@ Neos:
               index:
                 label: NeosRulez.CookieOptIn:Main:cookieManagerGroupLabel
                 title: NeosRulez.CookieOptIn:Main:cookieManagerGroupDescription
+          cookie:
+            label: NeosRulez.CookieOptIn:Main:cookieManagerCookieLabel
+            controller: '\NeosRulez\CookieOptIn\Controller\CookieController'
+            description: NeosRulez.CookieOptIn:Main:cookieManagerCookieDescription
+            icon: 'icon-cookie'
+            actions:
+              index:
+                label: NeosRulez.CookieOptIn:Main:cookieManagerCookieLabel
+                title: NeosRulez.CookieOptIn:Main:cookieManagerCookieDescription
 NeosRulez:
   CookieOptIn:
     test: '1'

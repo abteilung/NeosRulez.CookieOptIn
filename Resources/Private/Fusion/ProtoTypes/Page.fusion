@@ -1,0 +1,38 @@
+prototype(Neos.Neos:Page) {
+    head {
+        NeosRulezCookieOptInCss = NeosRulez.ScssParser:ScssFile
+        NeosRulezCookieOptInCss {
+            @position = 'before stylesheets'
+            source = 'resource://NeosRulez.CookieOptIn/Private/Styles/styles.scss'
+            inline = FALSE
+            format = 'compressed'
+            outputFolder = 'resource://NeosRulez.CookieOptIn/Public/Styles/'
+        }
+        NeosRulezCookieOptInModal = NeosRulez.CookieOptIn:Modal
+        NeosRulezCookieOptInModal {
+            @position = 'before stylesheets'
+            @process.1 = ${node.context.workspaceName == 'live' ? value : ''}
+        }
+    }
+    NeosRulezCookieOptInJs = NeosRulez.JsMinifier:JsFile
+    NeosRulezCookieOptInJs {
+        @position = 'end'
+        source = 'resource://NeosRulez.CookieOptIn/Private/JavaScript/scripts.js'
+        inline = FALSE
+        outputFolder = 'resource://NeosRulez.CookieOptIn/Public/JavaScript/'
+    }
+}
+
+prototype(NeosRulez.CookieOptIn:Modal) < prototype(Neos.Neos:Plugin)
+prototype(NeosRulez.CookieOptIn:Modal) {
+    package = 'NeosRulez.CookieOptIn'
+    controller = 'Frontend'
+    action = 'index'
+    @cache {
+        mode = 'uncached'
+        context {
+            1 = 'node'
+            2 = 'documentNode'
+        }
+    }
+}

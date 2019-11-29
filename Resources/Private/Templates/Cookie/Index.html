@@ -1,0 +1,48 @@
+<f:if condition="{cookies}">
+    <f:then>
+        <table class="neos-table">
+            <thead>
+            <tr>
+                <td>{f:translate(id: 'cookieName', package: 'NeosRulez.CookieOptIn', source: 'Main')}</td>
+                <td>{f:translate(id: 'cookieDescription', package: 'NeosRulez.CookieOptIn', source: 'Main')}</td>
+                <td>{f:translate(id: 'cookieLifetime', package: 'NeosRulez.CookieOptIn', source: 'Main')}</td>
+                <td>{f:translate(id: 'cookieGroup', package: 'NeosRulez.CookieOptIn', source: 'Main')}</td>
+                <td>&nbsp;</td>
+            </tr>
+            </thead>
+            <tbody>
+            <f:for each="{cookies}" as="cookie">
+                <tr>
+                    <td>{cookie.name}</td>
+                    <td>{cookie.description}</td>
+                    <td>{cookie.lifetime}</td>
+                    <td>
+                        <f:for each="{cookieGroups}" as="cookieGroup">
+                            <f:if condition="{cookie.cookiegroup}==<f:format.identifier>{cookieGroup}</f:format.identifier>">
+                                {cookieGroup.name}
+                                <f:if condition="{cookieGroup.essential}">
+                                    &nbsp;<span class="neos-label">{f:translate(id: 'cookieGroupEssential', package: 'NeosRulez.CookieOptIn', source: 'Main')}</span>
+                                </f:if>
+                            </f:if>
+                        </f:for>
+                    </td>
+                    <td class="neos-action">
+                        <div class="neos-pull-right">
+                            <f:form action="delete" arguments="{cookie: cookie}">
+                                <f:link.action class="neos-button neos-button-primary" action="edit" arguments="{cookie: cookie}"><i class="fas fa-pencil-alt icon-white"></i></f:link.action>
+                                <button type="submit" class="neos-button neos-button-danger"><i class="fas fa-trash"></i></button>
+                            </f:form>
+                        </div>
+                    </td>
+                </tr>
+            </f:for>
+            </tbody>
+        </table>
+    </f:then>
+    <f:else>
+        <br />{f:translate(id: 'noCookies', package: 'NeosRulez.CookieOptIn', source: 'Main')}
+    </f:else>
+</f:if>
+<div class="neos-footer">
+    <f:link.action class="neos-button neos-button-primary" action="new">{f:translate(id: 'newCookie', package: 'NeosRulez.CookieOptIn', source: 'Main')}</f:link.action>
+</div>

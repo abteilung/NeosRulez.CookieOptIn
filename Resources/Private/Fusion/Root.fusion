@@ -1,13 +1,1 @@
-prototype(Neos.Neos:Page) {
-    NeosRulezCookieOptInJs = Neos.Fusion:Tag {
-        @position = 'after NeosRulezBootstrapJs'
-        tagName = 'script'
-        attributes {
-            type = 'text/javascript'
-            src = Neos.Fusion:ResourceUri {
-                path = 'resource://NeosRulez.CookieOptIn/Public/JavaScript/scripts.min.js'
-            }
-        }
-    }
-    #NeosRulezCookieOptInJs.@if.contentIsPresent = ${q(documentNode).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof NeosRulez.Blog:BlogPosts]').is()}
-}
+include: ProtoTypes/*

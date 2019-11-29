@@ -2,10 +2,20 @@ privilegeTargets:
   Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
     'NeosRulez.CookieOptIn:CookieGroupControllerActions':
       matcher: 'method(NeosRulez\CookieOptIn\Controller\CookieGroupController->.*Action())'
+    'NeosRulez.CookieOptIn:CookieControllerActions':
+      matcher: 'method(NeosRulez\CookieOptIn\Controller\CookieController->.*Action())'
+    'NeosRulez.CookieOptIn:FrontendControllerActions':
+      matcher: 'method(NeosRulez\CookieOptIn\Controller\FrontendController->.*Action())'
 
 roles:
   'Neos.Flow:Everybody':
     privileges:
       -
         privilegeTarget: 'NeosRulez.CookieOptIn:CookieGroupControllerActions'
+        permission: GRANT
+      -
+        privilegeTarget: 'NeosRulez.CookieOptIn:CookieControllerActions'
+        permission: GRANT
+      -
+        privilegeTarget: 'NeosRulez.CookieOptIn:FrontendControllerActions'
         permission: GRANT

@@ -7,7 +7,6 @@ namespace NeosRulez\CookieOptIn\Controller;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\Controller\ActionController;
-use NeosRulez\Blog\Domain\Model\Category;
 
 class CookieGroupController extends ActionController
 {
@@ -42,6 +41,32 @@ class CookieGroupController extends ActionController
     {
         $this->cookieGroupRepository->add($newCookieGroup);
         $this->redirect('index');
+    }
+
+    /**
+     * @param \NeosRulez\CookieOptIn\Domain\Model\CookieGroup $cookieGroup
+     * @return void
+     */
+    public function editAction($cookieGroup) {
+        $this->view->assign('cookieGroup', $cookieGroup);
+    }
+
+    /**
+     * @param \NeosRulez\CookieOptIn\Domain\Model\CookieGroup $cookieGroup
+     * @return void
+     */
+    public function updateAction($cookieGroup) {
+        $this->cookieGroupRepository->update($cookieGroup);
+        $this->redirect('index','cookieGroup');
+    }
+
+    /**
+     * @param \NeosRulez\CookieOptIn\Domain\Model\CookieGroup $cookieGroup
+     * @return void
+     */
+    public function deleteAction($cookieGroup) {
+        $this->cookieGroupRepository->remove($cookieGroup);
+        $this->redirect('index','cookieGroup');
     }
 
 

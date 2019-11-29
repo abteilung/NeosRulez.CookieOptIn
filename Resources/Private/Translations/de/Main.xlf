@@ -32,6 +32,45 @@
 			<trans-unit id="save" xml:space="preserve">
 				<source>Speichern</source>
 			</trans-unit>
+			<trans-unit id="cookieName" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="cookieDescription" xml:space="preserve">
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="cookieLifetime" xml:space="preserve">
+				<source>Lebenszeit</source>
+			</trans-unit>
+			<trans-unit id="cookieGroup" xml:space="preserve">
+				<source>Cookie-Gruppe</source>
+			</trans-unit>
+			<trans-unit id="noCookies" xml:space="preserve">
+				<source>Keine Cookies verfügbar</source>
+			</trans-unit>
+			<trans-unit id="newCookie" xml:space="preserve">
+				<source>Neuen Cookie anlegen</source>
+			</trans-unit>
+			<trans-unit id="cookieManagerCookieLabel" xml:space="preserve">
+				<source>Cookies</source>
+			</trans-unit>
+			<trans-unit id="cookieManagerCookieDescription" xml:space="preserve">
+				<source>Mit diesem Modul können Cookies verwaltet werden</source>
+			</trans-unit>
+			<trans-unit id="cookieModalHeader" xml:space="preserve">
+				<source>Wir verwenden Cookies</source>
+			</trans-unit>
+			<trans-unit id="cookieModalBody" xml:space="preserve">
+				<source>Wir nutzen Cookies auf unserer Website. Einige von ihnen sind essenziell, während andere uns helfen, diese Website und Ihre Erfahrung zu verbessern.</source>
+			</trans-unit>
+			<trans-unit id="cookieModalSave" xml:space="preserve">
+				<source>Speichern</source>
+			</trans-unit>
+			<trans-unit id="cookieModalEssential" xml:space="preserve">
+				<source>Nur Essenzielle</source>
+			</trans-unit>
+			<trans-unit id="cookieModalAll" xml:space="preserve">
+				<source>Alle erlauben</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -32,6 +32,45 @@
 			<trans-unit id="save" xml:space="preserve">
 				<source>Save</source>
 			</trans-unit>
+			<trans-unit id="cookieName" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="cookieDescription" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="cookieLifetime" xml:space="preserve">
+				<source>Lifetime</source>
+			</trans-unit>
+			<trans-unit id="cookieGroup" xml:space="preserve">
+				<source>Cookie-Groups</source>
+			</trans-unit>
+			<trans-unit id="noCookies" xml:space="preserve">
+				<source>No Cookies available</source>
+			</trans-unit>
+			<trans-unit id="newCookie" xml:space="preserve">
+				<source>New Cookie</source>
+			</trans-unit>
+			<trans-unit id="cookieManagerCookieLabel" xml:space="preserve">
+				<source>Cookies</source>
+			</trans-unit>
+			<trans-unit id="cookieManagerCookieDescription" xml:space="preserve">
+				<source>With this module Cookies can be managed</source>
+			</trans-unit>
+			<trans-unit id="cookieModalHeader" xml:space="preserve">
+				<source>We use cookies</source>
+			</trans-unit>
+			<trans-unit id="cookieModalBody" xml:space="preserve">
+				<source>We use cookies on our website. Some of them are essential while others help us improve this website and your experience.</source>
+			</trans-unit>
+			<trans-unit id="cookieModalSave" xml:space="preserve">
+				<source>Save</source>
+			</trans-unit>
+			<trans-unit id="cookieModalEssential" xml:space="preserve">
+				<source>Essential only</source>
+			</trans-unit>
+			<trans-unit id="cookieModalAll" xml:space="preserve">
+				<source>Allow all</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
