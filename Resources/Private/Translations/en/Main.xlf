@@ -71,6 +71,9 @@
 			<trans-unit id="cookieModalAll" xml:space="preserve">
 				<source>Allow all</source>
 			</trans-unit>
+			<trans-unit id="revoke" xml:space="preserve">
+				<source>Cookie-Settings</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

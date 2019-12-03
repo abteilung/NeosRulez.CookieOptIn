@@ -38,4 +38,4 @@ Neos:
                 title: NeosRulez.CookieOptIn:Main:cookieManagerCookieDescription
 NeosRulez:
   CookieOptIn:
-    test: '1'
+    revoke: true

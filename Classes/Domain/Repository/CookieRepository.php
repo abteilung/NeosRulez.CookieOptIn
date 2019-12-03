@@ -11,7 +11,12 @@ use Neos\Flow\Persistence\Repository;
 /**
  * @Flow\Scope("singleton")
  */
-class CookieRepository extends Repository
-{
+class CookieRepository extends Repository {
 
+    public function findByCookieGroup($identifier) {
+        $class = '\NeosRulez\CookieOptIn\Domain\Model\Cookie';
+        $query = $this->persistenceManager->createQueryForType($class);
+        $result = $query->matching($query->equals('cookiegroup', $identifier))->execute();
+        return $result;
+    }
 }

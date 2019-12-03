@@ -1,3 +1,4 @@
+@mixin transition($property) { transition: all $property; -webkit-transition: all $property; -moz-transition: all $property; }
 .neosrulez-cookieoptin-modal-wrapper { position: fixed; left:0; top:0; background:rgba(0,0,0,0.9); width:100%; height:100%; z-index:99999999;
   .cookieoptin-modal { background:#FFF;
     .cookiegroup { font-weight:bold; line-height:1em;
@@ -9,4 +10,9 @@
     }
   }
   .btn { cursor: pointer; }
+}
+.neosrulez-cookieoptin-revoke { position: fixed; right:0; bottom:0; margin-right:8em; text-decoration: none;
+  background:#ebebeb; padding:0.5em; font-size:0.7em;
+  border-radius: 4px 4px 0 0; cursor: pointer; @include transition(0.2s);
+  &:hover { background: #cccccc; padding-bottom:1em; text-decoration: none; }
 }

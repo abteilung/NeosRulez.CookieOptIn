@@ -8,10 +8,11 @@ prototype(Neos.Neos:Page) {
             format = 'compressed'
             outputFolder = 'resource://NeosRulez.CookieOptIn/Public/Styles/'
         }
-        NeosRulezCookieOptInModal = NeosRulez.CookieOptIn:Modal
-        NeosRulezCookieOptInModal {
-            @position = 'before stylesheets'
+        NeosRulezCookieOptInModalStart = NeosRulez.CookieOptIn:Modal
+        NeosRulezCookieOptInModalStart {
+            @position = 'after stylesheets'
             @process.1 = ${node.context.workspaceName == 'live' ? value : ''}
+            position = 1
         }
     }
     NeosRulezCookieOptInJs = NeosRulez.JsMinifier:JsFile
@@ -20,6 +21,12 @@ prototype(Neos.Neos:Page) {
         source = 'resource://NeosRulez.CookieOptIn/Private/JavaScript/scripts.js'
         inline = FALSE
         outputFolder = 'resource://NeosRulez.CookieOptIn/Public/JavaScript/'
+    }
+    NeosRulezCookieOptInModalEnd = NeosRulez.CookieOptIn:Modal
+    NeosRulezCookieOptInModalEnd {
+        @position = 'end'
+        @process.1 = ${node.context.workspaceName == 'live' ? value : ''}
+        position = 2
     }
 }
 
