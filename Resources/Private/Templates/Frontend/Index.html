@@ -13,9 +13,18 @@
                         <div class="col-12 mb-4">
                             <f:for each="{cookieGroups}" as="cookieGroup">
                                 <div class="d-block cookiegroup">
-                                    <div class="row my-3">
+                                    <div class="row my-3 align-items-center">
                                         <div class="col-8">{cookieGroup.name}</div>
-                                        <div class="col-4 text-right">Checkbox</div>
+                                        <div class="col-4 text-right">
+                                            <f:if condition="{cookieGroup.essential}==1">
+                                                <f:then>
+                                                    <div class="bs-checkbox ronly">&nbsp;</div>
+                                                </f:then>
+                                                <f:else>
+                                                    <div class="bs-checkbox">&nbsp;</div>
+                                                </f:else>
+                                            </f:if>
+                                        </div>
                                     </div>
                                     <f:for each="{cookies}" as="cookie">
                                         <f:if condition="{cookie.cookiegroup}==<f:format.identifier>{cookieGroup}</f:format.identifier>">

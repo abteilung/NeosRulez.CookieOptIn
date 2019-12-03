@@ -1,7 +1,11 @@
 .neosrulez-cookieoptin-modal-wrapper { position: fixed; left:0; top:0; background:rgba(0,0,0,0.9); width:100%; height:100%; z-index:99999999;
   .cookieoptin-modal { background:#FFF;
-    .cookiegroup { font-weight:bold;
-      .cookie { font-weight:normal; font-size:0.8em; border-bottom:1px solid #ebebeb; }
+    .cookiegroup { font-weight:bold; line-height:1em;
+      .bs-checkbox { border:1px solid #000; width:1em; height:1em; float:right; cursor: pointer;
+        &.checked, &.ronly { background:url("../Images/check-light.svg") no-repeat center center; background-size:90%; }
+        &.ronly { opacity:0.5; }
+      }
+      .cookie { font-weight:normal; font-size:0.8em; border-bottom:1px solid #ebebeb; line-height:1.4em; padding-top:0.25em; padding-bottom:0.25em; }
     }
   }
   .btn { cursor: pointer; }
