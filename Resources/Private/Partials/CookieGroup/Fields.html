@@ -1,15 +1,15 @@
 <div class="neos-control-group">
     <label for="name">{f:translate(id: 'cookieGroupName', package: 'NeosRulez.CookieOptIn', source: 'Main')}</label>
-    <f:form.textfield property="name" id="name" />
+    <f:form.textfield class="neos-span6" property="name" id="name" />
 </div>
 <div class="neos-control-group">
     <label for="description">{f:translate(id: 'cookieGroupDescription', package: 'NeosRulez.CookieOptIn', source: 'Main')}</label>
-    <f:form.textarea property="description" id="description" />
+    <f:form.textarea class="neos-span6" property="description" id="description" rows="20" />
 </div>
 <div class="neos-control-group">
     <div class="neos-controls">
-        <label for="essential">
-            <f:form.checkbox class="neos-checkbox" property="essential" id="essential" value="1" />
+        <label for="essential" class="neos-checkbox" title="" data-neos-toggle="tooltip" data-placement="right" data-original-title="{f:translate(id: 'cookieGroupEssential', package: 'NeosRulez.CookieOptIn', source: 'Main')}">
+            <f:form.checkbox property="essential" id="essential" value="1" /><span></span>
             {f:translate(id: 'cookieGroupEssential', package: 'NeosRulez.CookieOptIn', source: 'Main')}
         </label>
     </div>

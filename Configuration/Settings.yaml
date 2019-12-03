@@ -12,7 +12,7 @@ Neos:
         NeosRulez.CookieOptIn: true
     modules:
       cookieoptin:
-        label: NeosRulez.CookieOptIn:Main:cookieManagerGroupLabel
+        label: NeosRulez.CookieOptIn:Main:cookieMangerLabel
         controller: '\Neos\Neos\Controller\Module\ManagementController'
         description: NeosRulez.CookieOptIn:Main:cookieMangerDescription
         icon: 'icon-cookie'
