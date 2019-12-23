@@ -28,6 +28,8 @@ prototype(Neos.Neos:Page) {
         @process.1 = ${node.context.workspaceName == 'live' ? value : ''}
         position = 2
     }
+
+
 }
 
 prototype(NeosRulez.CookieOptIn:Modal) < prototype(Neos.Neos:Plugin)
@@ -35,6 +37,11 @@ prototype(NeosRulez.CookieOptIn:Modal) {
     package = 'NeosRulez.CookieOptIn'
     controller = 'Frontend'
     action = 'index'
+    docNode = ${node.identifier}
+    impressNode = ${'node://' + Configuration.setting('NeosRulez.CookieOptIn.impressNode')}
+    privacyNode = ${'node://' + Configuration.setting('NeosRulez.CookieOptIn.privacyNode')}
+    impressNode.@process.1 = Neos.Neos:ConvertUris
+    privacyNode.@process.1 = Neos.Neos:ConvertUris
     @cache {
         mode = 'uncached'
         context {

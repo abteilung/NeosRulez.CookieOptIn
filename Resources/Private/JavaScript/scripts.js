@@ -15,4 +15,17 @@ $(document).ready(function(){
         }
     });
 
+    cookiec = 0;
+    $('.cookiegroup-toggle').click(function(){
+        attr = $(this).attr('data-cookiec');
+        if(attr==1) {
+            $(this).parent().parent().parent().find('.cookies').slideToggle();
+        } else {
+            $('.cookiegroup-toggle').parent().parent().parent().find('.cookies').slideUp();
+            $(this).parent().parent().parent().find('.cookies').slideToggle();
+            $('.cookiegroup-toggle').attr('data-cookiec',0);
+            $(this).attr('data-cookiec',1);
+        }
+    });
+
 });

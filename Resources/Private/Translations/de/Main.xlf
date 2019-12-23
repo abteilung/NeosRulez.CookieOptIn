@@ -63,7 +63,7 @@
 				<source>Wir nutzen Cookies auf unserer Website. Einige von ihnen sind essenziell, während andere uns helfen, diese Website und Ihre Erfahrung zu verbessern.</source>
 			</trans-unit>
 			<trans-unit id="cookieModalSave" xml:space="preserve">
-				<source>Speichern</source>
+				<source>Meine Einstellungen speichern</source>
 			</trans-unit>
 			<trans-unit id="cookieModalEssential" xml:space="preserve">
 				<source>Nur Essenzielle</source>
@@ -73,6 +73,12 @@
 			</trans-unit>
 			<trans-unit id="revoke" xml:space="preserve">
 				<source>Cookie-Einstellungen</source>
+			</trans-unit>
+			<trans-unit id="impress" xml:space="preserve">
+				<source>Impressum</source>
+			</trans-unit>
+			<trans-unit id="dataprivacy" xml:space="preserve">
+				<source>Datenschutz</source>
 			</trans-unit>
 		</body>
 	</file>

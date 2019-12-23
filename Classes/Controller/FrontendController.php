@@ -44,7 +44,7 @@ class FrontendController extends ActionController
         $this->view->assign('cookies', $this->cookieRepository->findAll());
         $this->view->assign('cookieGroups', $this->cookieGroupRepository->findAll());
         $position = $this->request->getInternalArgument('__position');
-        $cookieName = 'NeosRulezCookieOptIn';
+        $cookieName = 'nrco';
         if(isset($_COOKIE[$cookieName])) {
             $cookieValue = $_COOKIE[$cookieName];
             $cookieArray = array();
@@ -101,6 +101,24 @@ class FrontendController extends ActionController
 
         }
         $this->view->assign('position',$position);
+
+        $impressNode = $this->request->getInternalArgument('__impressNode');
+        $privacyNode = $this->request->getInternalArgument('__privacyNode');
+        $this->view->assign('impressNode', $impressNode);
+        $this->view->assign('privacyNode', $privacyNode);
+
+        $docNode = $this->request->getInternalArgument('__docNode');
+        $exclude = 0;
+        $excludeNodes = $this->settings['excludeNodes'];
+        $excludeNodes = explode(",", $excludeNodes);
+        foreach ($excludeNodes as $excludeNode) {
+            if($docNode==$excludeNode) {
+                $exclude = $exclude+1;
+            }
+        }
+        if($exclude!=0) {
+            $this->view->assign('noModal', 1);
+        }
     }
 
     /**
@@ -109,10 +127,14 @@ class FrontendController extends ActionController
     public function setSelectedCookiesAction()
     {
         $cookieGroupArray = $this->request->getArgument('cookieGroupArray');
-        $cookieName = 'NeosRulezCookieOptIn';
+        $cookieName = 'nrco';
         $cookieValue = $cookieGroupArray;
-        setcookie($cookieName, $cookieValue, time() + (86400 * 30), "/");
-        $this->redirectToUri('/');
+        if($cookieGroupArray=='') {
+            setcookie($cookieName, 'essential', time() + (86400 * 30), "/");
+        } else {
+            setcookie($cookieName, $cookieValue, time() + (86400 * 30), "/");
+        }
+        $this->redirectToUri($_SERVER['HTTP_REFERER']);
     }
 
     /**
@@ -120,10 +142,10 @@ class FrontendController extends ActionController
      */
     public function setEssentialCookiesAction()
     {
-        $cookieName = 'NeosRulezCookieOptIn';
+        $cookieName = 'nrco';
         $cookieValue = 'essential';
         setcookie($cookieName, $cookieValue, time() + (86400 * 30), "/");
-        $this->redirectToUri('/');
+        $this->redirectToUri($_SERVER['HTTP_REFERER']);
     }
 
     /**
@@ -131,10 +153,10 @@ class FrontendController extends ActionController
      */
     public function setAllCookiesAction()
     {
-        $cookieName = 'NeosRulezCookieOptIn';
+        $cookieName = 'nrco';
         $cookieValue = 'all';
         setcookie($cookieName, $cookieValue, time() + (86400 * 30), "/");
-        $this->redirectToUri('/');
+        $this->redirectToUri($_SERVER['HTTP_REFERER']);
     }
 
     /**
@@ -142,10 +164,10 @@ class FrontendController extends ActionController
      */
     public function revokeCookiesAction()
     {
-        $cookieName = 'NeosRulezCookieOptIn';
+        $cookieName = 'nrco';
         $cookieValue = 'revoked';
         setcookie($cookieName, $cookieValue, time() + (86400 * 30), "/");
-        $this->redirectToUri('/');
+        $this->redirectToUri($_SERVER['HTTP_REFERER']);
     }
 
 

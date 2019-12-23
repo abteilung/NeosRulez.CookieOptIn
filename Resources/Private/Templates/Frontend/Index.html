@@ -27,7 +27,11 @@
                                     <f:for each="{cookieGroups}" as="cookieGroup">
                                         <div class="d-block cookiegroup">
                                             <div class="row my-3 align-items-center">
-                                                <div class="col-8">{cookieGroup.name}</div>
+                                                <div class="col-8">
+                                                    <div class="d-block cookiegroup-toggle" data-cookiec="<f:format.identifier>{cookieGroup}</f:format.identifier>">
+                                                        {cookieGroup.name}
+                                                    </div>
+                                                </div>
                                                 <div class="col-4 text-right">
                                                     <f:if condition="{cookieGroup.essential}==1">
                                                         <f:then>
@@ -39,29 +43,41 @@
                                                     </f:if>
                                                 </div>
                                             </div>
-                                            <f:for each="{cookies}" as="cookie">
-                                                <f:if condition="{cookie.cookiegroup}==<f:format.identifier>{cookieGroup}</f:format.identifier>">
-                                                    <div class="row no-gutters cookie">
-                                                        <div class="col-2">{cookie.name}</div>
-                                                        <div class="col-8">{cookie.description}</div>
-                                                        <div class="col-2 text-right">{cookie.lifetime}</div>
-                                                    </div>
-                                                </f:if>
-                                            </f:for>
+                                            <f:if condition="{cookies}">
+                                                <div class="cookies">
+                                                    <f:for each="{cookies}" as="cookie">
+                                                        <f:if condition="{cookie.cookiegroup}==<f:format.identifier>{cookieGroup}</f:format.identifier>">
+                                                            <div class="row cookie">
+                                                                <div class="col-md-2 col-12">{cookie.name}</div>
+                                                                <div class="col-md-8 col-8">{cookie.description}</div>
+                                                                <div class="col-md-2 col-4 text-right">{cookie.lifetime}</div>
+                                                            </div>
+                                                        </f:if>
+                                                    </f:for>
+                                                </div>
+                                            </f:if>
                                         </div>
                                     </f:for>
                                 </div>
-                                <div class="col-md-4">
-                                    <f:form action="setSelectedCookies" controller="Frontend">
-                                        <f:form.hidden name="cookieGroupArray" id="cookieGroupArray" value="" />
-                                        <button type="submit" class="btn btn-secondary btn-block mt-3" id="saveCookieSettings">{f:translate(id: 'cookieModalSave', package: 'NeosRulez.CookieOptIn', source: 'Main')}</button>
-                                    </f:form>
-                                </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <f:link.action class="btn btn-secondary btn-block mt-3" action="setEssentialCookies" id="allowEssential">{f:translate(id: 'cookieModalEssential', package: 'NeosRulez.CookieOptIn', source: 'Main')}</f:link.action>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <f:link.action class="btn btn-primary btn-block mt-3" action="setAllCookies" id="allowAll">{f:translate(id: 'cookieModalAll', package: 'NeosRulez.CookieOptIn', source: 'Main')}</f:link.action>
+                                </div>
+                                <div class="col-md-6 mt-3">
+                                    <f:form action="setSelectedCookies" controller="Frontend">
+                                        <f:form.hidden name="cookieGroupArray" id="cookieGroupArray" value="" />
+                                        <button type="submit" class="btn btn-link modal-footerlink" id="saveCookieSettings">{f:translate(id: 'cookieModalSave', package: 'NeosRulez.CookieOptIn', source: 'Main')}</button>
+                                    </f:form>
+                                </div>
+                                <div class="col-md-6 mt-3 text-right">
+                                    <f:if condition="{impressNode}">
+                                        <a href="{impressNode}" target="_blank" class="modal-footerlink">{f:translate(id: 'impress', package: 'NeosRulez.CookieOptIn', source: 'Main')}</a>
+                                    </f:if>
+                                    <f:if condition="{privacyNode}">
+                                        <a href="{privacyNode}" target="_blank" class="modal-footerlink">{f:translate(id: 'dataprivacy', package: 'NeosRulez.CookieOptIn', source: 'Main')}</a>
+                                    </f:if>
                                 </div>
                             </div>
                         </div>

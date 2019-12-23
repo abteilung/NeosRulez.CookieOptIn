@@ -39,3 +39,6 @@ Neos:
 NeosRulez:
   CookieOptIn:
     revoke: true
+    impressNode: '065e4e5d-7637-4217-9947-c223ef1acae8'
+    privacyNode: '8b908936-3572-4960-ab46-59dbda510c92'
+    excludeNodes: '065e4e5d-7637-4217-9947-c223ef1acae8,8b908936-3572-4960-ab46-59dbda510c92'

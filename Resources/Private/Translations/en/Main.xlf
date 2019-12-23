@@ -63,7 +63,7 @@
 				<source>We use cookies on our website. Some of them are essential while others help us improve this website and your experience.</source>
 			</trans-unit>
 			<trans-unit id="cookieModalSave" xml:space="preserve">
-				<source>Save</source>
+				<source>Save my settings</source>
 			</trans-unit>
 			<trans-unit id="cookieModalEssential" xml:space="preserve">
 				<source>Essential only</source>
@@ -73,6 +73,12 @@
 			</trans-unit>
 			<trans-unit id="revoke" xml:space="preserve">
 				<source>Cookie-Settings</source>
+			</trans-unit>
+			<trans-unit id="impress" xml:space="preserve">
+				<source>Impress</source>
+			</trans-unit>
+			<trans-unit id="dataprivacy" xml:space="preserve">
+				<source>Data privacy</source>
 			</trans-unit>
 		</body>
 	</file>

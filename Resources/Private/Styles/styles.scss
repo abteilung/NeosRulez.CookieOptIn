@@ -1,15 +1,22 @@
 @mixin transition($property) { transition: all $property; -webkit-transition: all $property; -moz-transition: all $property; }
-.neosrulez-cookieoptin-modal-wrapper { position: fixed; left:0; top:0; background:rgba(0,0,0,0.9); width:100%; height:100%; z-index:99999999;
+.neosrulez-cookieoptin-modal-wrapper { position: fixed; left:0; top:0; background:rgba(0,0,0,0.9); width:100%; height:100%; z-index:99999999; overflow:scroll; overflow-x:hidden !important;
   .cookieoptin-modal { background:#FFF;
     .cookiegroup { font-weight:bold; line-height:1em;
       .bs-checkbox { border:1px solid #000; width:1em; height:1em; float:right; cursor: pointer;
         &.checked, &.ronly { background:url("../Images/check-light.svg") no-repeat center center; background-size:90%; }
         &.ronly { opacity:0.5; }
       }
-      .cookie { font-weight:normal; font-size:0.8em; border-bottom:1px solid #ebebeb; line-height:1.4em; padding-top:0.25em; padding-bottom:0.25em; }
+      .cookies { display:none;
+        .cookie { font-weight:normal; font-size:0.8em; border-bottom:1px solid #ebebeb; line-height:1.4em; padding-top:0.25em; padding-bottom:0.25em;
+          .col-md-2 { word-break: break-word; }
+        }
+      }
+      .cookiegroup-toggle { cursor: pointer; }
     }
   }
   .btn { cursor: pointer; }
+  .btn-link { margin:0 !important; padding:0; line-height:0; }
+  .modal-footerlink { font-size:0.8em; margin-left:0.5em; }
 }
 .neosrulez-cookieoptin-revoke { position: fixed; right:0; bottom:0; margin-right:8em; text-decoration: none;
   background:#ebebeb; padding:0.5em; font-size:0.7em;
