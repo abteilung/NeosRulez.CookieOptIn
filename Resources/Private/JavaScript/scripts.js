@@ -1,7 +1,5 @@
 $(document).ready(function(){
-
     cookieGroupArray = [];
-
     $('.bs-checkbox').click(function(){
         if (!$(this).hasClass('ronly')) {
             $(this).toggleClass('checked');
@@ -14,7 +12,6 @@ $(document).ready(function(){
             $('#cookieGroupArray').val(cookieGroupArray);
         }
     });
-
     cookiec = 0;
     $('.cookiegroup-toggle').click(function(){
         attr = $(this).attr('data-cookiec');
@@ -27,5 +24,4 @@ $(document).ready(function(){
             $(this).attr('data-cookiec',1);
         }
     });
-
 });
